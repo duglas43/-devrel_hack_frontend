@@ -51,11 +51,11 @@ function FilterBar() {
     let data = qs.stringify({ sortBy, langs });
     axios
       .get(`${process.env.REACT_APP_API_URL}/users/allData/?${data}`)
-      .then(() =>
-        navigate(`${process.env.REACT_APP_API_URL}/excels/users.xlsx`)
-      )
       .then(() => {
-        navigate("/");
+        window.open(
+          `${process.env.REACT_APP_API_URL}/excels/users.xlsx`,
+          "_blank"
+        );
       });
   };
   return (
