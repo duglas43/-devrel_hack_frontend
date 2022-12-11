@@ -8,6 +8,7 @@ import {
   setLanguage,
   setPage,
 } from "../../redux/slices/filterSlice";
+import { useNavigate } from "react-router-dom";
 import qs from "qs";
 const sortList = [
   { type: "stars", name: "По количеству звезд" },
@@ -30,6 +31,7 @@ const langsList = [
   "TypeScript",
 ];
 function FilterBar() {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const { sortBy, langs } = useSelector(selectFilter);
 
@@ -47,7 +49,14 @@ function FilterBar() {
   };
   const onSaveClick = () => {
     let data = qs.stringify({ sortBy, langs });
-    axios.get(`${process.env.REACT_APP_API_URL}/users/allData/?${data}`);
+    axios
+      .get(`${process.env.REACT_APP_API_URL}/users/allData/?${data}`)
+      .then(() =>
+        navigate(`${process.env.REACT_APP_API_URL}/excels/users.xlsx`)
+      )
+      .then(() => {
+        navigate("/");
+      });
   };
   return (
     <div>
