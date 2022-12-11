@@ -8,7 +8,7 @@ export const fetchUsers = createAsyncThunk(
     let filtersQs = qs.stringify({ sortBy, langs, page });
     console.log(filtersQs);
     const { data } = await axios.get(
-      `http://localhost:3001/users/?${filtersQs}`
+      `${process.env.REACT_APP_API_URL}/users/?${filtersQs}`
     );
     return data;
   }
