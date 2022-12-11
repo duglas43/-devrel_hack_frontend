@@ -31,7 +31,6 @@ const langsList = [
   "TypeScript",
 ];
 function FilterBar() {
-  const navigate = useNavigate();
   const dispatch = useDispatch();
   const { sortBy, langs } = useSelector(selectFilter);
 
@@ -88,7 +87,7 @@ function FilterBar() {
                 sortByOpen ? styles.active : ""
               } p-0 border ${styles.title}`}
             >
-              {sortList.map((item) => (
+              {sortList?.map((item) => (
                 <li
                   key={item.type}
                   onClick={() => {
@@ -129,7 +128,7 @@ function FilterBar() {
         <div className={`${styles.py12} ${filterOpen ? styles.active : ""} `}>
           <p className={`mb-2 ${styles.title} pb-2`}>Языки программирования:</p>
           <div className={`mb-2 ${styles["genres-list"]}`}>
-            {langsList.map((item) => (
+            {langsList?.map((item) => (
               <div
                 className={`tag tag--outlined rounded-5 py-2 px-3 me-2 mb-2 ${
                   styles.tag
