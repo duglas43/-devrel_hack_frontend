@@ -35,7 +35,7 @@ function Header() {
                   window.location.pathname === "/" ? "fw-bold text-black" : ""
                 }
               >
-                Home
+                Домашнаяя страница
               </Nav.Link>
               <Nav.Link
                 onClick={() => navigate("/users")}
@@ -45,7 +45,7 @@ function Header() {
                     : ""
                 }
               >
-                Users
+                Пользователи
               </Nav.Link>
 
               <Form className="d-flex">

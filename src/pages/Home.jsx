@@ -7,7 +7,7 @@ function Home() {
       <div className="container-fluid px-2 px-md-4">
         <div className="bg-white py-4 px-3 px-md-5 rounded-3">
           <div className="d-flex">
-            <h2 className="me-2">Community:</h2>
+            <h2 className="me-2">Сообщество:</h2>
             <div className="dropdown">
               <button
                 className="btn btn-secondary dropdown-toggle"

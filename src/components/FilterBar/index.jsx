@@ -8,13 +8,14 @@ import {
   setLanguage,
   setPage,
 } from "../../redux/slices/filterSlice";
+import { useNavigate } from "react-router-dom";
 import qs from "qs";
 const sortList = [
-  { type: "stars", name: "numbers of stars" },
-  { type: "commits", name: "numbers of commits" },
-  { type: "prs", name: "numbers of PullRequests" },
-  { type: "issues", name: "numbers of Issues" },
-  { type: "contribs", name: "numbers of projects" },
+  { type: "stars", name: "По количеству звезд" },
+  { type: "commits", name: "По количеству коммитов" },
+  { type: "prs", name: "По количеству PullRequests" },
+  { type: "issues", name: "По количеству исправленных ошибок" },
+  { type: "contribs", name: "По количеству проектов" },
 ];
 const langsList = [
   "C",
@@ -58,7 +59,7 @@ function FilterBar() {
     <div>
       <div className={`${styles.filter} px-3`}>
         <div className={`${styles.filter__head}`}>
-          <div className={`${styles.filter__title}`}>Sort</div>
+          <div className={`${styles.filter__title}`}>Сортировка</div>
           <div
             onClick={() => setSortOpen((prev) => !prev)}
             className={`${styles.filter__arrow}`}
@@ -71,7 +72,7 @@ function FilterBar() {
           </div>
         </div>
         <form className={`${styles.py12} ${sortOpen ? styles.active : ""} `}>
-          <p className={`mb-2 ${styles.title}`}>Sort by:</p>
+          <p className={`mb-2 ${styles.title}`}>Сортировать по:</p>
           <div
             onClick={() => setSortByOpen((prev) => !prev)}
             className={`${styles.select__wrapper} px-3 border`}
@@ -109,7 +110,7 @@ function FilterBar() {
 
       <div className={`${styles.filter} px-3 mt-4 `}>
         <div className={`${styles.filter__head}`}>
-          <div className={`${styles.filter__title}`}>Filter</div>
+          <div className={`${styles.filter__title}`}>Фильтрация</div>
           <div
             onClick={() => setFilterOpen((prev) => !prev)}
             className={`${styles.filter__arrow}`}
@@ -123,7 +124,7 @@ function FilterBar() {
         </div>
 
         <div className={`${styles.py12} ${filterOpen ? styles.active : ""} `}>
-          <p className={`mb-2 ${styles.title} pb-2`}>Programming languages:</p>
+          <p className={`mb-2 ${styles.title} pb-2`}>Языки программирования:</p>
           <div className={`mb-2 ${styles["genres-list"]}`}>
             {langsList?.map((item) => (
               <div

@@ -43,11 +43,13 @@ function User({
                 {name}
               </a>
             </p>
-            <p className="p-0 m-0">Stars: {stars}</p>
-            <p className="p-0 m-0">Commits: {commits}</p>
+            <p className="p-0 m-0">Звёзд: {stars}</p>
+            <p className="p-0 m-0">Коммитов: {commits}</p>
             <p className="p-0 m-0">PullRequests: {prs}</p>
-            <p className="p-0 m-0">Issues: {issues}</p>
-            <p className="p-0 m-0">Contributions: {contribs}</p>
+            <p className="p-0 m-0">Ошибок исправил: {issues}</p>
+            <p className="p-0 m-0">
+              В скольких проектах участвовал: {contribs}
+            </p>
             <p className="p-0 m-0">
               ЯП:
               {langs.map((item) => {
