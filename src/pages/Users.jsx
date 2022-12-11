@@ -42,6 +42,7 @@ function Users() {
                             issues={user.issues}
                             contribs={user.contribs}
                             langs={user.langs}
+                            image={user.image}
                           />
                         );
                       })

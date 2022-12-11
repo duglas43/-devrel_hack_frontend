@@ -11,6 +11,7 @@ function User({
   contribs,
   langs,
   isLoading,
+  image,
 }) {
   if (isLoading)
     return (
@@ -29,7 +30,7 @@ function User({
         <div className="row flex-wrap">
           <div className="col-4">
             <img
-              src="https://i.pinimg.com/originals"
+              src={image || "https://via.placeholder.com/60"}
               className="rounded-circle"
               width="60px"
               height="60px"
