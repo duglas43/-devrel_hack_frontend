@@ -6,6 +6,35 @@ function Home() {
     <div>
       <div className="container-fluid px-2 px-md-4">
         <div className="bg-white py-4 px-3 px-md-5 rounded-3">
+          <div className="d-flex">
+            <h2 className="me-2">Community:</h2>
+            <div className="dropdown">
+              <button
+                className="btn btn-secondary dropdown-toggle"
+                type="button"
+                id="dropdownMenuButton1"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                NodeJs
+              </button>
+              <ul
+                className="dropdown-menu"
+                aria-labelledby="dropdownMenuButton1"
+              >
+                <li>
+                  <a className="dropdown-item">Apache Spark</a>
+                </li>
+                <li>
+                  <a className="dropdown-item">Rust</a>
+                </li>
+                <li>
+                  <a className="dropdown-item">Red Hat OpenShift</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
           <div className="row gy-2">
             <div className="col-lg-3 col-md-6 text-white ">
               <div className="card bg-blue border-0 rounded-4 text-white">
