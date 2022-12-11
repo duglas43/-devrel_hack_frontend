@@ -1,12 +1,14 @@
 import React from "react";
 import styles from "./FilterBar.module.scss";
 import { useDispatch, useSelector } from "react-redux";
+import axios from "axios";
 import {
   selectFilter,
   setSortBy,
   setLanguage,
   setPage,
 } from "../../redux/slices/filterSlice";
+import qs from "qs";
 const sortList = [
   { type: "stars", name: "По количеству звезд" },
   { type: "commits", name: "По количеству коммитов" },
@@ -42,6 +44,10 @@ function FilterBar() {
   const onLanguageClick = (language) => {
     dispatch(setPage(0));
     dispatch(setLanguage(language));
+  };
+  const onSaveClick = () => {
+    let data = qs.stringify({ sortBy, langs });
+    axios.get(`${process.env.REACT_APP_API_URL}/users/allData/${data}`);
   };
   return (
     <div>
@@ -130,6 +136,9 @@ function FilterBar() {
             ))}
           </div>
         </div>
+      </div>
+      <div className="btn btn-primary mt-4" onClick={onSaveClick}>
+        Сохранить в excel
       </div>
     </div>
   );
