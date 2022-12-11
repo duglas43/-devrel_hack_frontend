@@ -31,7 +31,7 @@ function Users() {
               <div className="body-bg rounded-2 p-4">
                 <div className="row gy-4">
                   {status === "loaded"
-                    ? usersData.users.map((user) => {
+                    ? usersData?.users?.map((user) => {
                         return (
                           <User
                             key={user.id}
