@@ -47,7 +47,7 @@ function FilterBar() {
   };
   const onSaveClick = () => {
     let data = qs.stringify({ sortBy, langs });
-    axios.get(`${process.env.REACT_APP_API_URL}/users/allData/${data}`);
+    axios.get(`${process.env.REACT_APP_API_URL}/users/allData/?${data}`);
   };
   return (
     <div>
