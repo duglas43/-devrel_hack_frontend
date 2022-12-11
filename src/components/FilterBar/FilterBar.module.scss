@@ -1,0 +1,123 @@
+$grey: rgb(152, 152, 152);
+$light-grey: rgb(209, 213, 219);
+$dark-grey-1: rgb(73, 73, 75);
+$dark-grey: rgb(51, 51, 53);
+$black: rgb(28, 28, 30);
+$my-blue: rgb(59, 118, 239);
+// #f2f7ff;
+@import "../../style/variables.scss";
+
+.filter {
+  padding-top: 6px;
+  background-color: $body-bg;
+  border-radius: 6px;
+}
+
+.py12 {
+  padding: 12px 0;
+  display: none;
+}
+
+.filter__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 6px;
+  border-bottom: 1px solid $light-grey;
+}
+
+.filter__arrow {
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.filter__title {
+  font-size: 1.125rem;
+}
+
+.title {
+  font-size: 1.124rem;
+}
+
+
+.select__wrapper {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 0;
+  background-color: $body-bg-20;
+  border-radius: 6px;
+  position: relative;
+}
+
+.select__arrow {
+  font-size: 2rem;
+}
+
+.select__list {
+  position: absolute;
+  top: 70px;
+  left: 0;
+  width: 100%;
+  background-color: $body-bg-20;
+  z-index: 1;
+  border-radius: 6px;
+  display: none;
+
+  &.active {
+    display: block;
+  }
+}
+
+.active {
+  display: block;
+}
+
+.select__item {
+  cursor: pointer;
+
+  padding: 8px 12px;
+
+  &:hover {
+    background-color: $body-bg-30;
+  }
+}
+
+.hide {
+  display: none;
+}
+
+.genres-list {
+  display: flex;
+  flex-wrap: wrap;
+  max-height: 250px;
+  overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: rgb(7, 7, 7);
+    border-radius: 10px;
+  }
+}
+
+.tag {
+  border: 1px solid $grey;
+
+  &.active {
+    background: $my-blue;
+    color: white;
+    border: none;
+
+    &:hover {
+      background: rgb(45, 93, 251);
+    }
+  }
+}
