@@ -48,14 +48,12 @@ function FilterBar() {
   };
   const onSaveClick = () => {
     let data = qs.stringify({ sortBy, langs });
-    axios
-      .get(`${process.env.REACT_APP_API_URL}/users/allData/?${data}`)
-      .then(() => {
-        window.open(
-          `${process.env.REACT_APP_API_URL}/excels/users.xlsx`,
-          "_blank"
-        );
-      });
+    axios.get(`${process.env.REACT_APP_API_URL}/allData/?${data}`).then(() => {
+      window.open(
+        `${process.env.REACT_APP_API_URL}/excels/users.xlsx`,
+        "_blank"
+      );
+    });
   };
   return (
     <div>
